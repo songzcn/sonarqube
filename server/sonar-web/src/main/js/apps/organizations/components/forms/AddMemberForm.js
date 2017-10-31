@@ -72,15 +72,22 @@ export default class AddMemberForm extends React.PureComponent {
     }
   };
 
+  handleClose = (e /*: MouseEvent */) => {
+    e.preventDefault();
+    e.stopPropagation();
+    this.closeForm();
+  };
+
   selectedMemberChange = (member /*: Member */) => {
     this.setState({ selectedMember: member });
   };
 
   renderModal() {
+    const header = translate('users.add');
     return (
-      <Modal contentLabel="modal form" onRequestClose={this.closeForm}>
+      <Modal key="add-member-modal" contentLabel={header} onRequestClose={this.closeForm}>
         <header className="modal-head">
-          <h2>{translate('users.add')}</h2>
+          <h2>{header}</h2>
         </header>
         <form onSubmit={this.handleSubmit}>
           <div className="modal-body">
@@ -100,7 +107,7 @@ export default class AddMemberForm extends React.PureComponent {
               <button type="submit" disabled={!this.state.selectedMember}>
                 {translate('organization.members.add_to_members')}
               </button>
-              <button type="reset" className="button-link" onClick={this.closeForm}>
+              <button type="reset" className="button-link" onClick={this.handleClose}>
                 {translate('cancel')}
               </button>
             </div>
@@ -111,11 +118,14 @@ export default class AddMemberForm extends React.PureComponent {
   }
 
   render() {
-    return (
-      <button onClick={this.openForm}>
+    const buttonComponent = (
+      <button key="add-member-button" onClick={this.openForm}>
         {translate('organization.members.add')}
-        {this.state.open && this.renderModal()}
       </button>
     );
+    if (this.state.open) {
+      return [buttonComponent, this.renderModal()];
+    }
+    return buttonComponent;
   }
 }

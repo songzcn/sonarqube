@@ -71,6 +71,7 @@ Object {
 exports[`should render and open the modal 1`] = `
 <a
   href="#"
+  key="manage-member-button"
   onClick={[Function]}
 >
   organization.members.manage_groups
@@ -78,97 +79,18 @@ exports[`should render and open the modal 1`] = `
 `;
 
 exports[`should render and open the modal 2`] = `
-<a
-  href="#"
-  onClick={[Function]}
->
-  organization.members.manage_groups
+Array [
+  <a
+    href="#"
+    key="manage-member-button"
+    onClick={[Function]}
+  />,
   <Modal
-    contentLabel="modal form"
+    contentLabel="organization.members.manage_groups"
+    key="manage-member-modal"
     onRequestClose={[Function]}
-  >
-    <header
-      className="modal-head"
-    >
-      <h2>
-        organization.members.manage_groups
-      </h2>
-    </header>
-    <form
-      onSubmit={[Function]}
-    >
-      <div
-        className="modal-body"
-      >
-        <strong>
-          organization.members.members_groups.Admin Istrator
-        </strong>
-         
-        <ul
-          className="list-spaced"
-        >
-          <OrganizationGroupCheckbox
-            checked={false}
-            group={
-              Object {
-                "description": "",
-                "id": "7",
-                "membersCount": 12,
-                "name": "professionals",
-              }
-            }
-            key="7"
-            onCheck={[Function]}
-          />
-          <OrganizationGroupCheckbox
-            checked={false}
-            group={
-              Object {
-                "description": "Technical accounts",
-                "id": "11",
-                "membersCount": 3,
-                "name": "pull-request-analysers",
-              }
-            }
-            key="11"
-            onCheck={[Function]}
-          />
-          <OrganizationGroupCheckbox
-            checked={false}
-            group={
-              Object {
-                "description": "System administrators",
-                "id": "1",
-                "membersCount": 17,
-                "name": "sonar-administrators",
-              }
-            }
-            key="1"
-            onCheck={[Function]}
-          />
-        </ul>
-      </div>
-      <footer
-        className="modal-foot"
-      >
-        <div>
-          <button
-            type="submit"
-          >
-            save
-          </button>
-          <button
-            className="button-link"
-            onClick={[Function]}
-            type="reset"
-          >
-            cancel
-          </button>
-        </div>
-      </footer>
-    </form>
-  </Modal>
-</a>
+  />,
+]
 `;
 
 exports[`should reset the selected groups when the modal is opened 1`] = `

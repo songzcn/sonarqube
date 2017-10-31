@@ -2,6 +2,7 @@
 
 exports[`should render and open the modal 1`] = `
 <button
+  key="add-member-button"
   onClick={[Function]}
 >
   organization.members.add
@@ -9,65 +10,15 @@ exports[`should render and open the modal 1`] = `
 `;
 
 exports[`should render and open the modal 2`] = `
-<button
-  onClick={[Function]}
->
-  organization.members.add
+Array [
+  <button
+    key="add-member-button"
+    onClick={[Function]}
+  />,
   <Modal
-    contentLabel="modal form"
+    contentLabel="users.add"
+    key="add-member-modal"
     onRequestClose={[Function]}
-  >
-    <header
-      className="modal-head"
-    >
-      <h2>
-        users.add
-      </h2>
-    </header>
-    <form
-      onSubmit={[Function]}
-    >
-      <div
-        className="modal-body"
-      >
-        <div
-          className="modal-large-field"
-        >
-          <label>
-            users.search_description
-          </label>
-          <UsersSelectSearch
-            autoFocus={true}
-            excludedUsers={
-              Array [
-                "admin",
-              ]
-            }
-            handleValueChange={[Function]}
-            searchUsers={[Function]}
-          />
-        </div>
-      </div>
-      <footer
-        className="modal-foot"
-      >
-        <div>
-          <button
-            disabled={true}
-            type="submit"
-          >
-            organization.members.add_to_members
-          </button>
-          <button
-            className="button-link"
-            onClick={[Function]}
-            type="reset"
-          >
-            cancel
-          </button>
-        </div>
-      </footer>
-    </form>
-  </Modal>
-</button>
+  />,
+]
 `;
